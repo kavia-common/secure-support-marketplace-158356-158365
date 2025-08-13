@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { supabase } from '../config/supabaseClient';
+import { getURL } from '../utils/getURL';
 
 const AuthContext = createContext(null);
 
@@ -70,7 +71,7 @@ export function AuthProvider({ children }) {
         email,
         password,
         options: {
-          emailRedirectTo: window?.location?.origin || undefined,
+          emailRedirectTo: `${getURL()}auth/callback`,
         },
       });
       if (error) throw error;

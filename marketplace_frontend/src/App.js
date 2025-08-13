@@ -12,6 +12,8 @@ import Login from './pages/auth/Login';
 import Signup from './pages/auth/Signup';
 import VerifyIdentity from './pages/auth/VerifyIdentity';
 import Consent from './pages/auth/Consent';
+import AuthCallback from './pages/auth/AuthCallback';
+import AuthError from './pages/auth/Error';
 
 import Marketplace from './pages/marketplace/Marketplace';
 import ListenerProfile from './pages/marketplace/ListenerProfile';
@@ -59,6 +61,8 @@ function App() {
 
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/auth/callback" element={<AuthCallback />} />
+          <Route path="/auth/error" element={<AuthError />} />
           <Route path="/verify" element={<ProtectedRoute><VerifyIdentity /></ProtectedRoute>} />
           <Route path="/consent" element={<ProtectedRoute><Consent /></ProtectedRoute>} />
 
